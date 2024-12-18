@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- BEGIN TIKTOK BASE CODE -->
+    <script>
+	!(function (w, d, t) {
+	w.TiktokAnalyticsObject = t;
+	var ttq = (w[t] = w[t] || []);
+	(ttq.methods = [
+	  "page",
+	  "track",
+	  "identify",
+	  "instances",
+	  "debug",
+	  "on",
+	  "off",
+	  "once",
+	  "ready",
+	  "alias",
+	  "group",
+	  "enableCookie",
+	  "disableCookie",
+	]),
+	  (ttq.setAndDefer = function (t, e) {
+		t[e] = function () {
+		  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+		};
+	  });
+	for (var i = 0; i < ttq.methods.length; i++)
+	  ttq.setAndDefer(ttq, ttq.methods[i]);
+	(ttq.instance = function (t) {
+	  for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)
+		ttq.setAndDefer(e, ttq.methods[n]);
+	  return e;
+	}),
+	  (ttq.load = function (e, n) {
+		var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+		(ttq._i = ttq._i || {}),
+		  (ttq._i[e] = []),
+		  (ttq._i[e]._u = i),
+		  (ttq._t = ttq._t || {}),
+		  (ttq._t[e] = +new Date()),
+		  (ttq._o = ttq._o || {}),
+		  (ttq._o[e] = n || {});
+		n = document.createElement("script");
+		(n.type = "text/javascript"),
+		  (n.async = !0),
+		  (n.src = i + "?sdkid=" + e + "&lib=" + t);
+		e = document.getElementsByTagName("script")[0];
+		e.parentNode.insertBefore(n, e);
+	  });
+  
+	ttq.load("CNL6573C77UE31F38GNG");
+	ttq.page();
+  })(window, document, "ttq");
+</script>
+	<!-- END TIKTOK BASE CODE -->
+
+        <title>Hello World | Store</title>
+    </head>
+	<body>
+	<div class="content">
+		<header>
+			<h1 class="title">Hello World | Store</h1>
+			<div class="cart">
+				Items In Cart:<input type="number" id="cart-items" width="10" height="10" value="0">
+			</div>
+		</header>
+		
+	   <container>
+          <div>
+            Logged in as email@example.com
+          </div>
+       </container>
+
+	    <table>
+	    	<tr>
+	    		<td>
+       				<div class="container">
+       					<div class="box">
+	       					<div class="item-title-1">Product 1</div> 
+	       					<div class="item-product-id-1">Product ID: 5678AB</div>
+	                        <div class="item-price-1">$29.99</div>
+
+	                        <button onclick="viewContent('Product 1','5678AB',29.99)">View Content Details</button> 
+	                        <button id="add-to-cart-button-1" onclick="addToCart('Product 1','5678AB',29.99)">Add To Cart</button>
+	                    </div>
+       				</div>
+       			</td>
+                <td>
+                	<div class="container">
+                		<div class="box">
+		                	<div class="item-title-2">Product 2</div> 
+		                	<div class="item-product-id-2">Product ID: 6521FJ</div>
+		                    <div class="item-price-2">$49.99</div>
+
+		                    <button onclick="viewContent('Product 2','6521FJ',49.99)">View Content Details</button> 
+		                    <button id="add-to-cart-button-2" onclick="addToCart('Product 2','6521FJ',49.99)">Add To Cart</button>
+		                </div>
+	                </div>
+                </td>
+         		<td>
+         			<div class="container">
+         				<div class="box">
+		         			<div class="item-title-3" class="shop-item-title">Product 3</div> 
+		         			<div class="item-product-id-2">Product ID: 4098MD</div>
+		                    <div class="item-price-2" class="shop-item-price">$199.99</div>
+
+		                    <button onclick="viewContent('Product 3','4098MD',199.99)">View Content Details</button> 
+		                    <button id="add-to-cart-button-3" onclick="addToCart('Product 3','4098MD',199.99)">Add To Cart</button>
+		                </div> 
+	                </div>
+         		</td>
+         	</tr>
+        </table>
+
+        <button class="checkout" onclick="initiateCheckout()">Initiate Checkout</button>
+
+        <footer>
+
+        </footer>
+
+    </div>
+
+        <!-- BEGIN TIKTOK PIXEL EVENT FUNCTIONS SCRIPT SECTION -->
+        <script>
+        // BEGIN DO NOT EDIT SECTION
+    completeRegistration();
+    // END DO NOT EDIT SECTION
+
+    function completeRegistration() {
+        // BEGIN DO NOT EDIT SECTION
+        console.log("completeRegistration Function");
+
+        alert("Required Registration Step - click OK to continue" + 
+            "\n" + "Email address provided is email@example.com");
+
+        alert("Required Registration Step - click OK to continue" + 
+            "\n" + "Phone number provided +15551234567");
+
+        alert("Registration Complete - Logged in as email@example.com");
+
+        var phone = "+15551234567";
+        var email = "email@example.com";
+
+        console.log("email: " + email);
+        console.log("phone: " + phone);
+        // END DO NOT EDIT SECTION
+
+        // BEGIN - PLACE YOUR FUNCTIONS IN THIS SECTION
+
+        // Advanced Matching Parameters
+        ttq.identify({
+            email: email,                // User's email address
+            phone_number: phone          // User's phone number
+        });
+
+        // CompleteRegistration Event Parameters
+        ttq.track("CompleteRegistration", {
+            value: 0.00,                     // 0 for testing purposes
+            currency: "USD",                 // Standard currency format
+            external_id: "1234567890",       // Optional: User ID from your system
+            description: "User completed registration successfully",
+            event_source: "website",         // Indicates this is a web event
+        });
+
+        // END - PLACE YOUR FUNCTIONS IN THIS SECTION 
+        	}		
+        	
+        	function viewContent(title, productId, price) {
+    // BEGIN DO NOT EDIT SECTION
+    alert("Mock Product Item Details Popup: "
+        + "\n" + "title: " + title
+        + "\n" + "price: " + price
+        + "\n" + "productId: " + productId);
+    // END DO NOT EDIT SECTION
+
+    // BEGIN HINT: UTILIZE THESE VARIABLES WHEN CONSTRUCTING YOUR CORRESPONDING TIKTOK PIXEL EVENT
+    console.log("viewContent Function");
+    console.log("title: " + title);
+    console.log("price: " + price);
+    console.log("productId: " + productId);
+    // END HINT: UTILIZE THESE VARIABLES WHEN CONSTRUCTING YOUR CORRESPONDING TIKTOK PIXEL EVENT
+
+    // BEGIN - PLACE YOUR FUNCTIONS IN THIS SECTION
+
+    // Advanced Matching Parameters
+    ttq.identify({
+        content_name: title,       // Product title
+        content_id: productId,     // Unique product ID
+    });
+
+    // ViewContent Event Parameters
+    ttq.track("ViewContent", {
+        content_name: title,       // Product title
+        content_id: productId,     // Unique product ID
+        price: price,              // Price of the product
+        value: price,              // Value for the event (matches product price)
+        currency: "USD",           // Currency in which the price is set
+        description: "Product details viewed", // A description for the event
+        event_source: "website"    // Specifies the event's source
+    });
+	console.log("ViewContent event fired successfully");
+    // END - PLACE YOUR FUNCTIONS IN THIS SECTION 
+        	}
+        	
+        	function addToCart(title, productId, price) {
+    // BEGIN HINT: UTILIZE THESE VARIABLES WHEN CONSTRUCTING YOUR CORRESPONDING TIKTOK PIXEL EVENTS
+    console.log("addToCart Function");
+    console.log("title: " + title);
+    console.log("price: " + price);
+    console.log("productId: " + productId);
+    // END HINT: UTILIZE THESE VARIABLES WHEN CONSTRUCTING YOUR CORRESPONDING TIKTOK PIXEL EVENTS
+
+    // BEGIN DO NOT EDIT SECTION
+    if (title == "Product 1") {
+        document.getElementById("add-to-cart-button-1").disabled = 'true';
+    } else if (title == "Product 2") {
+        document.getElementById("add-to-cart-button-2").disabled = 'true';
+    } else if (title == "Product 3") {
+        document.getElementById("add-to-cart-button-3").disabled = 'true';
+    }
+    document.getElementById("cart-items").stepUp();
+    // END DO NOT EDIT SECTION
+
+    // BEGIN - PLACE YOUR FUNCTIONS IN THIS SECTION
+
+    // Advanced Matching Parameters
+    ttq.identify({
+        content_name: title,        // Product title
+        content_id: productId,      // Unique product ID
+    });
+
+    // AddToCart Event Parameters
+    ttq.track("AddToCart", {
+        content_name: title,        // Product title
+        content_id: productId,      // Unique product ID
+        price: price,               // Price of the product
+        value: price,               // Value matches product price
+        currency: "USD",            // Currency code
+        quantity: 1,                // Default quantity added to cart
+        description: "Product added to cart", // Descriptive event note
+        event_source: "website"     // Specifies event origin
+    });
+	console.log("AddToCart event fired successfully");
+    // END - PLACE YOUR FUNCTIONS IN THIS SECTION   		
+        	}
+
+        	function initiateCheckout() {
+    var retVal = confirm("This is a pop up meant to be a mock initiate checkout step - clicking OK will assume that the correct payment information was entered by the customer. Purchase will then complete successfully. HINT: Clicking Cancel should not trigger any events");
+
+    if (retVal == true) {
+        // BEGIN - PLACE YOUR FUNCTIONS IN THIS SECTION
+
+        // Advanced Matching Parameters
+        ttq.identify({
+            email: "email@example.com",       // user email
+            phone_number: "+15551234567",     // phone number
+            external_id: "1234567890"         // unique ID 
+        });
+
+        // InitiateCheckout Event Parameters
+        ttq.track("InitiateCheckout", {
+            contents: [
+                { content_name: "Product 1", content_id: "5678AB", price: 29.99, quantity: 1 },
+                { content_name: "Product 2", content_id: "6521FJ", price: 49.99, quantity: 1 },
+                { content_name: "Product 3", content_id: "4098MD", price: 199.99, quantity: 1 }
+            ],
+            value: 29.99 + 49.99 + 199.99,     // Total checkout value
+            currency: "USD",                  // Currency in which prices are set
+            description: "User initiated checkout process", // Event description
+            event_source: "website"           // Specifies the event's source
+        });
+        console.log("InitiateCheckout event fired successfully");
+
+        // END - PLACE YOUR FUNCTIONS IN THIS SECTION
+
+        // BEGIN DO NOT EDIT SECTION
+        completePayment();
+    } else {
+        alert("Payment step cancelled!");
+        return false;
+    }
+    // END DO NOT EDIT SECTION
+        	}
+
+        	// HINT: This is the dedicated function for Complete Payment
+        	function completePayment() {
+    // BEGIN - PLACE YOUR FUNCTIONS IN THIS SECTION
+
+    // Advanced Matching Parameters
+    ttq.identify({
+        email: "email@example.com",       // user email
+        phone_number: "+15551234567",     // phone number
+        external_id: "1234567890"         // unique ID 
+    });
+
+    // CompletePayment Event Parameters
+    ttq.track("CompletePayment", {
+        contents: [
+            { content_name: "Product 1", content_id: "5678AB", price: 29.99, quantity: 1 },
+            { content_name: "Product 2", content_id: "6521FJ", price: 49.99, quantity: 1 },
+            { content_name: "Product 3", content_id: "4098MD", price: 199.99, quantity: 1 }
+        ],
+        value: 29.99 + 49.99 + 199.99,     // Total payment value
+        currency: "USD",                  // Currency in which payment is made
+        description: "User completed payment successfully", // Event description
+        event_source: "website"           // Indicates the event source
+    });
+    console.log("CompletePayment event fired successfully");
+    // END - PLACE YOUR FUNCTIONS IN THIS SECTION
+
+    // BEGIN DO NOT EDIT SECTION
+    alert("Payment Completed - Purchase Successful");
+    // END DO NOT EDIT SECTION
+        	}
+        </script>
+        <!-- END TIKTOK PIXEL EVENT FUNCTIONS SCRIPT SECTION -->
+
+        <!-- BEGIN STYLING SECTION - DO NOT EDIT -->
+		<style type="text/css">
+			h1 + div {
+				padding-left: 370px;
+			}
+
+			div {
+				padding: 10px;
+			}
+
+			table {
+				padding-bottom: 20px;
+			}
+
+			footer {
+				padding: 10px;
+			}
+
+			.box {
+				box-sizing: content-box;    
+				width: 200px;
+				height: 180px;
+				padding: 20px;    
+				border: 2px solid black;
+				text-align: center;
+	        }
+
+			.cart {		
+				float: right;
+			}
+
+			.content {
+				max-width: 800px;
+				margin: auto;
+			}
+
+			.container {
+				display: flex;
+		        flex-wrap: wrap;
+		        justify-content: space-between;
+		        align-items: center;
+			}
+
+			.title {
+				display: inline-block;
+			}
+
+			#cart-items {
+				border: 0;
+			}
+    	</style>
+    	<!-- END STYLING SECTION - DO NOT EDIT -->
+
+	</body>
+</html>
